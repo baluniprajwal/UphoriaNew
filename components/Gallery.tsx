@@ -93,7 +93,7 @@ const Gallery: React.FC = () => {
     <section 
       id="gallery" 
       ref={containerRef} 
-      className="py-24 md:py-32 relative overflow-hidden bg-[#0a0a0a] text-white perspective-[1000px]"
+      className="py-16 md:py-32 relative overflow-hidden bg-[#0a0a0a] text-white perspective-[1000px]"
     >
       {/* Background Texture */}
       <div className="absolute inset-0 opacity-10 pointer-events-none" 
@@ -109,7 +109,7 @@ const Gallery: React.FC = () => {
           <div className="absolute bottom-[20%] right-[20%] w-80 h-80 bg-uphoria-pink rounded-full blur-[120px] opacity-30"></div>
       </div>
 
-      <div className="container mx-auto px-6 mb-16 relative z-10 text-center">
+      <div className="container mx-auto px-4 md:px-6 mb-10 md:mb-16 relative z-10 text-center">
         <div className="inline-block relative">
             <h2 className="font-display text-5xl md:text-7xl lg:text-9xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500 drop-shadow-[4px_4px_0px_#FF007F]">
               CAPTURED
@@ -124,17 +124,17 @@ const Gallery: React.FC = () => {
       </div>
 
       {/* Gallery Container */}
-      <div className="flex flex-col gap-12 md:gap-16 relative z-10">
+      <div className="flex flex-col gap-8 md:gap-16 relative z-10">
         
         {/* Row 1 */}
-        <div className="flex w-[200%] gap-6 md:gap-12 will-change-transform" ref={row1Ref}>
+        <div className="flex w-[200%] gap-4 sm:gap-6 md:gap-12 will-change-transform" ref={row1Ref}>
           {[...galleryItems, ...galleryItems].map((item, i) => (
             <GalleryItem key={`r1-${i}`} item={item} index={i} />
           ))}
         </div>
 
         {/* Row 2 */}
-        <div className="flex w-[200%] gap-6 md:gap-12 -ml-[100%] will-change-transform" ref={row2Ref}>
+        <div className="flex w-[200%] gap-4 sm:gap-6 md:gap-12 -ml-[100%] will-change-transform" ref={row2Ref}>
           {[...galleryItems, ...galleryItems].reverse().map((item, i) => (
             <GalleryItem key={`r2-${i}`} item={item} index={i} />
           ))}
@@ -167,7 +167,7 @@ const Gallery: React.FC = () => {
 const GalleryItem: React.FC<{ item: any, index: number }> = ({ item, index }) => {
     return (
         <div className={`
-            relative w-[240px] md:w-[350px] shrink-0 bg-white p-3 pb-12 
+            relative w-[180px] sm:w-[220px] md:w-[350px] shrink-0 bg-white p-3 pb-10 sm:pb-12 
             border-4 border-white shadow-xl 
             transform ${item.rotate} hover:rotate-0 hover:scale-105 hover:z-50 
             transition-transform duration-300 group cursor-none
@@ -190,7 +190,7 @@ const GalleryItem: React.FC<{ item: any, index: number }> = ({ item, index }) =>
             
             {/* Caption */}
             <div className="absolute bottom-2 left-0 w-full text-center">
-                <p className="font-hand text-black text-base md:text-xl font-bold flex items-center justify-center gap-2">
+                <p className="font-hand text-black text-sm sm:text-base md:text-xl font-bold flex items-center justify-center gap-2">
                     {item.caption}
                     {index % 3 === 0 && <span className="text-uphoria-pink">♥</span>}
                 </p>
