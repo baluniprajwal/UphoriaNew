@@ -450,9 +450,6 @@ const Artists: React.FC = () => {
                         </span>
                     </button>
                     
-                    <p className="text-white/50 font-hand text-xl animate-pulse cursor-pointer hover:text-white transition-colors">
-                        + 10 more local artists performing!
-                    </p>
                 </div>
             </div>
         </div>

@@ -1,14 +1,14 @@
 // Raw data provided
 const RAW_CATEGORIES = [
-  { id: "1", name: "Music", slug: "music", description: "Romantic gigs and acoustic nights." },
-  { id: "2", name: "Art", slug: "art", description: "Couples workshops and gallery walks." },
-  { id: "3", name: "Dance", slug: "dance", description: "Salsa nights and ballroom dancing." },
-  { id: "4", name: "Fashion", slug: "fashion", description: "Style events for the power couple." },
-  { id: "5", name: "Drama", slug: "drama", description: "Theater dates and opera nights." },
-  { id: "6", name: "Gaming", slug: "gaming", description: "Co-op challenges and arcade dates." },
-  { id: "7", name: "Literary", slug: "literary", description: "Poetry readings and book launches." },
-  { id: "8", name: "Photography", slug: "photography", description: "Capture memories together." },
-  { id: "9", name: "Astronomy", slug: "astronomy", description: "Stargazing under the night sky." },
+  { id: "1", name: "Music", slug: "music", description: "Music events for live gigs and acoustic nights." },
+  { id: "2", name: "Art", slug: "art", description: "Art events for workshops and gallery walks." },
+  { id: "3", name: "Dance", slug: "dance", description: "Dance events for salsa nights and ballroom dancing." },
+  { id: "4", name: "Fashion", slug: "fashion", description: "Fashion events for style showcases." },
+  { id: "5", name: "Drama", slug: "drama", description: "Drama events for theater and opera nights." },
+  { id: "6", name: "Gaming", slug: "gaming", description: "Gaming events for co-op challenges and arcade dates." },
+  { id: "7", name: "Literary", slug: "literary", description: "Literary events for poetry readings and book launches." },
+  { id: "8", name: "Photography", slug: "photography", description: "Photography events to capture memories together." },
+  { id: "9", name: "Astronomy", slug: "astronomy", description: "Astronomy events for stargazing under the night sky." },
 ];
 
 const EVENTS_BY_CATEGORY: any = {

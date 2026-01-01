@@ -97,8 +97,9 @@ const Sponsors: React.FC = () => {
               The Backbone of Uphoria
             </h2>
           </div>
-          <h2 className="font-display text-5xl md:text-7xl lg:text-8xl font-black uppercase text-uphoria-yellow drop-shadow-[5px_5px_0px_#000] stroke-black">
-            Our Sponsors
+          <h2 className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black uppercase text-uphoria-yellow drop-shadow-[5px_5px_0px_#000] stroke-black">
+            <span className="block">Our</span>
+            <span className="block">Sponsors</span>
           </h2>
         </div>
 

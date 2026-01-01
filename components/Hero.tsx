@@ -142,28 +142,19 @@ const Hero: React.FC = () => {
         {/* Huge Title Container */}
         <div className="relative perspective-[1000px] py-4">
            {/* Main Text */}
-           <h1 ref={textRef} className="hero-main-text font-display text-[14vw] md:text-[12rem] leading-[0.85] font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-b from-uphoria-pink via-uphoria-purple to-uphoria-cyan drop-shadow-[8px_8px_0px_rgba(0,0,0,1)] select-none hover:scale-105 transition-transform duration-500">
-             UPHORIA
-           </h1>
-           
-           {/* Decorative Elements on Text */}
-           <div className="absolute -top-6 -right-6 md:top-0 md:right-10 hero-badge">
-               <div className="bg-uphoria-yellow text-black font-hand font-bold text-xl md:text-3xl px-4 py-2 border-2 border-black rotate-12 hard-shadow">
-                   2026
-               </div>
+           <div ref={textRef} className="hero-main-text">
+             <img
+               src="/logo1.png"
+               alt="Uphoria"
+               className="w-[85vw] max-w-[880px] h-auto select-none hover:scale-105 transition-transform duration-500"
+               loading="lazy"
+             />
            </div>
+           
+           {/* Decorative Elements on Text removed */}
         </div>
 
-        {/* Subtitle */}
-        <div className="hero-badge mt-6 md:mt-10 relative inline-block max-w-2xl">
-            <h2 className="font-hand text-3xl md:text-5xl font-bold text-black leading-snug">
-               Where Some Stories Write{" "}
-               <span className="relative inline-block text-white">
-                   <span className="absolute inset-0 bg-black transform -rotate-2 scale-110 -z-10 rounded-sm"></span>
-                   <span className="relative z-10 px-2">Themselves</span>
-               </span>
-            </h2>
-        </div>
+        {/* Subtitle removed per logo */}
 
       </div>
 
