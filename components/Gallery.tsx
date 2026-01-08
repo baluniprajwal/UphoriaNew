@@ -44,13 +44,13 @@ const Gallery: React.FC = () => {
   useEffect(() => {
     const ctx = gsap.context(() => {
       
-      // 1. Scroll-Linked Horizontal Movement
-      // As user scrolls down, Row 1 moves left, Row 2 moves right
+      
+      
       
       gsap.set([row1Ref.current, row2Ref.current], { willChange: "transform" });
 
       gsap.to(row1Ref.current, {
-        xPercent: -20, // Move Left
+        xPercent: -20, 
         ease: "none",
         scrollTrigger: {
           trigger: containerRef.current,
@@ -62,7 +62,7 @@ const Gallery: React.FC = () => {
       });
 
       gsap.to(row2Ref.current, {
-        xPercent: 20, // Move Right
+        xPercent: 20, 
         ease: "none",
         scrollTrigger: {
           trigger: containerRef.current,
@@ -73,7 +73,7 @@ const Gallery: React.FC = () => {
         }
       });
 
-      // 2. Floating Sticker Animation
+      
       gsap.to(".gallery-sticker", {
         y: "random(-50, 50)",
         rotation: "random(-20, 20)",
@@ -95,7 +95,7 @@ const Gallery: React.FC = () => {
       ref={containerRef} 
       className="py-16 md:py-32 relative overflow-hidden bg-[#0a0a0a] text-white perspective-[1000px]"
     >
-      {/* Background Texture */}
+      {}
       <div className="absolute inset-0 opacity-10 pointer-events-none" 
            style={{
              backgroundImage: 'linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px)',
@@ -103,7 +103,7 @@ const Gallery: React.FC = () => {
            }}>
       </div>
       
-      {/* Background Blobs */}
+      {}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
           <div className="absolute top-[10%] left-[20%] w-64 h-64 bg-uphoria-purple rounded-full blur-[100px] opacity-30 animate-pulse"></div>
           <div className="absolute bottom-[20%] right-[20%] w-80 h-80 bg-uphoria-pink rounded-full blur-[120px] opacity-30"></div>
@@ -123,17 +123,17 @@ const Gallery: React.FC = () => {
         </h2>
       </div>
 
-      {/* Gallery Container */}
+      {}
       <div className="flex flex-col gap-8 md:gap-16 relative z-10">
         
-        {/* Row 1 */}
+        {}
         <div className="flex w-[200%] gap-4 sm:gap-6 md:gap-12 will-change-transform" ref={row1Ref}>
           {[...galleryItems, ...galleryItems].map((item, i) => (
             <GalleryItem key={`r1-${i}`} item={item} index={i} />
           ))}
         </div>
 
-        {/* Row 2 */}
+        {}
         <div className="flex w-[200%] gap-4 sm:gap-6 md:gap-12 -ml-[100%] will-change-transform" ref={row2Ref}>
           {[...galleryItems, ...galleryItems].reverse().map((item, i) => (
             <GalleryItem key={`r2-${i}`} item={item} index={i} />
@@ -142,7 +142,7 @@ const Gallery: React.FC = () => {
 
       </div>
 
-      {/* Floating Stickers Overlay */}
+      {}
       <div className="absolute inset-0 pointer-events-none z-20 overflow-hidden">
           <div className="gallery-sticker absolute top-[20%] left-[5%] text-uphoria-yellow">
               <Zap size={32} className="md:w-[48px] md:h-[48px] drop-shadow-lg" fill="#FFD60A" />
@@ -163,7 +163,7 @@ const Gallery: React.FC = () => {
   );
 };
 
-// Sub-component for individual items
+
 const GalleryItem: React.FC<{ item: any, index: number }> = ({ item, index }) => {
     return (
         <div className={`
@@ -172,10 +172,10 @@ const GalleryItem: React.FC<{ item: any, index: number }> = ({ item, index }) =>
             transform ${item.rotate} hover:rotate-0 hover:scale-105 hover:z-50 
             transition-transform duration-300 group cursor-none
         `}>
-            {/* Washi Tape */}
+            {}
             <div className={`absolute -top-3 left-1/2 -translate-x-1/2 w-16 md:w-20 h-4 md:h-5 ${item.tape} opacity-80 rotate-1 shadow-sm z-20`}></div>
             
-            {/* Image */}
+            {}
             <div className="w-full aspect-[4/3] overflow-hidden bg-gray-200 border border-gray-100 relative transition-all duration-500">
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent z-10 transition-colors"></div>
                 <img 
@@ -188,7 +188,7 @@ const GalleryItem: React.FC<{ item: any, index: number }> = ({ item, index }) =>
                 />
             </div>
             
-            {/* Caption */}
+            {}
             <div className="absolute bottom-2 left-0 w-full text-center">
                 <p className="font-hand text-black text-sm sm:text-base md:text-xl font-bold flex items-center justify-center gap-2">
                     {item.caption}

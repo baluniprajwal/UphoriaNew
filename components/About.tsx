@@ -10,7 +10,7 @@ const About: React.FC = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Rotating Background Elements on Scroll
+      
       gsap.to(".bg-scribble", {
         rotation: 360,
         ease: "none",
@@ -22,7 +22,7 @@ const About: React.FC = () => {
         }
       });
 
-      // Parallax Cards - Middle card moves differently
+      
       gsap.fromTo(".card-left", 
         { y: 100 },
         { y: -50, scrollTrigger: { trigger: ".cards-container", start: "top bottom", end: "bottom top", scrub: 1 } }
@@ -38,7 +38,7 @@ const About: React.FC = () => {
         { y: -50, scrollTrigger: { trigger: ".cards-container", start: "top bottom", end: "bottom top", scrub: 1 } }
       );
 
-      // Text Highlight Animation
+      
       gsap.to(".highlight-underline", {
         backgroundSize: "100% 100%",
         scrollTrigger: {
@@ -56,7 +56,7 @@ const About: React.FC = () => {
 
   return (
     <section id="about" ref={containerRef} className="py-24 md:py-32 relative z-10 overflow-hidden">
-      {/* Background scribbles */}
+      {}
       <div className="absolute inset-0 pointer-events-none z-0">
         <svg className="bg-scribble absolute top-10 left-[-100px] w-[200px] md:w-[300px] h-[200px] md:h-[300px] opacity-30 text-uphoria-pink" viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="2">
           <path d="M50 10 Q80 10 80 40 T50 70 T20 40 T50 10Z" />
@@ -86,7 +86,7 @@ const About: React.FC = () => {
             { title: "Creative Chaos", desc: "Where art meets technology in a beautiful explosion of innovation.", color: "bg-yellow-200", rotate: "-rotate-1", className: "card-right" }
           ].map((item, idx) => (
             <div key={idx} className={`about-card ${item.className} ${item.rotate} transform hover:z-20`}>
-              {/* Tape Effect */}
+              {}
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-24 h-8 bg-white/80 backdrop-blur-sm border border-gray-200 shadow-sm transform rotate-1 z-10 flex items-center justify-center font-hand text-[10px] text-gray-400">
                 WASHI TAPE
               </div>

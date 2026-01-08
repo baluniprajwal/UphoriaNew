@@ -31,6 +31,7 @@ const Navbar: React.FC = () => {
     { name: 'Artists', href: '#artists' },
     { name: 'Events', href: '#events' },
     { name: 'Timeline', href: '#timeline' },
+    { name: 'Accommodation', href: '/accommodation' },
     { name: 'Sponsors', href: '/sponsors'},
   ];
 
@@ -68,7 +69,7 @@ const Navbar: React.FC = () => {
           <img src="/logo1.png" alt="Uphoria" className="h-10 md:h-12 w-auto" loading="lazy" />
         </button>
 
-        {/* Desktop Nav */}
+        {}
         <div className="hidden md:flex items-center gap-6">
           {navLinks.map((link, i) => (
             <button 
@@ -81,13 +82,13 @@ const Navbar: React.FC = () => {
           ))}
         </div>
 
-        {/* Mobile Toggle */}
+        {}
         <button className="md:hidden text-black bg-uphoria-yellow p-2 rounded-lg border-2 border-black hard-shadow active:translate-y-1 active:shadow-none" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X size={24} strokeWidth={3} /> : <Menu size={24} strokeWidth={3} />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {}
       {isOpen && (
         <div className="fixed inset-0 top-0 bg-uphoria-pink/95 z-40 flex flex-col items-center justify-center gap-6 md:hidden">
           <button className="absolute top-6 right-6 text-white" onClick={() => setIsOpen(false)}>

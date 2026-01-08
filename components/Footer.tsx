@@ -26,13 +26,13 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
           
-          {/* Column 1: Brand & About (Width: 5 cols) */}
+          {}
           <div className="lg:col-span-6 flex flex-col items-start">
             <div className="flex items-center gap-4 text-uphoria-pink mb-6 font-display font-bold tracking-widest text-sm">
                <span className="w-12 h-[2px] bg-uphoria-pink"></span> EST. 2026
             </div>
 
-            {/* Full Logo */}
+            {}
             <div className="mb-6 relative w-full max-w-[460px]">
                <img
                  src="/full_logo.png"
@@ -75,7 +75,7 @@ const Footer: React.FC = () => {
                    <div className="flex items-start gap-3">
                       <Phone size={16} className="text-uphoria-pink mt-1 shrink-0" />
                       <div>
-                         <span className="text-white block font-bold">Adamya</span>
+                         <span className="text-white block font-bold">Adamya Veer Jain</span>
                          <span>Convener — 9115491195</span>
                       </div>
                    </div>
@@ -83,7 +83,7 @@ const Footer: React.FC = () => {
                    <div className="flex items-start gap-3">
                       <Phone size={16} className="text-uphoria-pink mt-1 shrink-0" />
                       <div>
-                         <span className="text-white block font-bold">Kriti</span>
+                         <span className="text-white block font-bold">Kriti Tripathi</span>
                          <span>Outreach Coordinator — 8765295405</span>
                       </div>
                    </div>
@@ -91,7 +91,7 @@ const Footer: React.FC = () => {
                    <div className="flex items-start gap-3">
                       <Phone size={16} className="text-uphoria-pink mt-1 shrink-0" />
                       <div>
-                         <span className="text-white block font-bold">Anshuman</span>
+                         <span className="text-white block font-bold">Anshuman Bansal</span>
                          <span>Outreach Coordinator — 7988760614</span>
                       </div>
                    </div>
@@ -99,7 +99,7 @@ const Footer: React.FC = () => {
                    <div className="flex items-start gap-3">
                       <Phone size={16} className="text-uphoria-pink mt-1 shrink-0" />
                       <div>
-                         <span className="text-white block font-bold">Krish</span>
+                         <span className="text-white block font-bold">Krish Sapra</span>
                          <span>Sponsorship Coordinator — 8569968662</span>
                       </div>
                    </div>
@@ -127,43 +127,45 @@ const Footer: React.FC = () => {
 
         </div>
 
-        {/* Tech Team Section - Positioned Bottom Right above the line */}
-        <div className="flex flex-col items-center md:items-end mb-4 md:mr-2">
-             <div className="flex items-center justify-center md:justify-end pl-0 md:pl-3">
-                {techTeam.map((member, i) => (
-                    <a
-                        key={i}
-                        href={member.url}
-                        target="_blank"
-                        rel="noreferrer"
-                        onBlur={(event) => event.currentTarget.blur()}
-                        className="group/avatar relative w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-[#111] bg-black -ml-3 first:ml-0 cursor-pointer hover:z-30 hover:-translate-y-2 hover:scale-110 transition-all duration-300 shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-uphoria-cyan"
-                    >
-                        <img 
-                            src={member.img} 
-                            alt={member.name}
-                            className="w-full h-full object-cover rounded-full transition-all duration-300"
-                            loading="lazy"
-                        />
-                        
-                        {/* Polaroid Hover Effect */}
-                        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-5 w-28 bg-white p-2 pb-7 border-2 border-black shadow-[4px_4px_0px_#FF007F] opacity-0 group-hover/avatar:opacity-100 group-focus-within/avatar:opacity-100 group-active/avatar:opacity-100 transition-all duration-300 pointer-events-none transform translate-y-4 group-hover/avatar:translate-y-0 group-focus-within/avatar:translate-y-0 group-active/avatar:translate-y-0 rotate-6 group-hover/avatar:rotate-0 group-focus-within/avatar:rotate-0 group-active/avatar:rotate-0 origin-bottom z-50">
-                            {/* Pin/Tape */}
-                            <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-8 h-8 bg-uphoria-yellow rounded-full border-2 border-black z-10 shadow-sm flex items-center justify-center">
-                                <div className="w-2 h-2 bg-black/20 rounded-full"></div>
-                            </div>
-                            
-                            <div className="w-full aspect-square bg-gray-100 border border-black overflow-hidden mb-1">
-                                 <img src={member.img} alt={member.name} className="w-full h-full object-cover filter contrast-125" />
-                            </div>
-                            
-                            <div className="absolute bottom-0 left-0 w-full text-center pb-2">
-                                <span className="font-hand font-black text-black text-sm uppercase tracking-wide transform -rotate-2 inline-block">{member.name}</span>
-                            </div>
-                        </div>
-                    </a>
-                ))}
-             </div>
+        <div className="flex flex-col md:flex-row items-center md:items-end justify-between gap-6 mb-4">
+          <div className="w-full md:w-auto flex justify-center md:justify-start">
+            <img
+              src="/bennett_logo.webp"
+              alt="Bennett University"
+              className="h-12 w-auto opacity-90"
+              loading="lazy"
+            />
+          </div>
+          <div className="w-full md:w-auto flex items-center justify-center md:justify-end pl-0 md:pl-3">
+            {techTeam.map((member, i) => (
+              <a
+                key={i}
+                href={member.url}
+                target="_blank"
+                rel="noreferrer"
+                onBlur={(event) => event.currentTarget.blur()}
+                className="group/avatar relative w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-[#111] bg-black -ml-3 first:ml-0 cursor-pointer hover:z-30 hover:-translate-y-2 hover:scale-110 transition-all duration-300 shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-uphoria-cyan"
+              >
+                <img
+                  src={member.img}
+                  alt={member.name}
+                  className="w-full h-full object-cover rounded-full transition-all duration-300"
+                  loading="lazy"
+                />
+                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-5 w-28 bg-white p-2 pb-7 border-2 border-black shadow-[4px_4px_0px_#FF007F] opacity-0 group-hover/avatar:opacity-100 group-focus-within/avatar:opacity-100 group-active/avatar:opacity-100 transition-all duration-300 pointer-events-none transform translate-y-4 group-hover/avatar:translate-y-0 group-focus-within/avatar:translate-y-0 group-active/avatar:translate-y-0 rotate-6 group-hover/avatar:rotate-0 group-focus-within/avatar:rotate-0 group-active/avatar:rotate-0 origin-bottom z-50">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-8 h-8 bg-uphoria-yellow rounded-full border-2 border-black z-10 shadow-sm flex items-center justify-center">
+                    <div className="w-2 h-2 bg-black/20 rounded-full"></div>
+                  </div>
+                  <div className="w-full aspect-square bg-gray-100 border border-black overflow-hidden mb-1">
+                    <img src={member.img} alt={member.name} className="w-full h-full object-cover filter contrast-125" />
+                  </div>
+                  <div className="absolute bottom-0 left-0 w-full text-center pb-2">
+                    <span className="font-hand font-black text-black text-sm uppercase tracking-wide transform -rotate-2 inline-block">{member.name}</span>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
 
         {/* Bottom Bar */}

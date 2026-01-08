@@ -17,7 +17,7 @@ const EventCategory: React.FC = () => {
     window.scrollTo(0, 0);
 
     const ctx = gsap.context(() => {
-      // Header Animation
+      
       gsap.fromTo(
         ".category-header",
         { y: -80, opacity: 0 },
@@ -31,7 +31,7 @@ const EventCategory: React.FC = () => {
         }
       );
 
-      // Card Stagger Animation
+      
       gsap.fromTo(
         ".event-ticket",
         { y: 40, opacity: 0 },
@@ -74,16 +74,16 @@ const EventCategory: React.FC = () => {
       ref={containerRef}
       className="min-h-screen bg-[#FFF0F5] pt-24 md:pt-32 pb-20 overflow-hidden relative"
     >
-      {/* Background Blobs */}
+      {}
       <div className="fixed inset-0 pointer-events-none z-0 opacity-20">
          <div className={`absolute -top-20 -right-20 w-96 h-96 ${category.color} rounded-full blur-[100px]`}></div>
          <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-white to-transparent"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        {/* Navigation */}
+        {}
         <button
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/", { state: { scrollTo: "events" } })}
           className="group flex items-center gap-2 font-hand font-bold text-lg md:text-xl mb-10 hover:-translate-x-2 transition-transform"
         >
           <div className="bg-white p-3 rounded-full border-2 border-black hard-shadow group-hover:bg-uphoria-yellow transition-colors">
@@ -92,7 +92,7 @@ const EventCategory: React.FC = () => {
           <span>Back to Categories</span>
         </button>
 
-        {/* Header */}
+        {}
         <div className="category-header mb-12 md:mb-16">
           <h1 className="font-display text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-black uppercase text-black drop-shadow-[2px_2px_0px_#fff] md:drop-shadow-[4px_4px_0px_#fff] break-words leading-none">
             {category.title}
@@ -102,7 +102,7 @@ const EventCategory: React.FC = () => {
           </div>
         </div>
 
-        {/* Events Grid */}
+        {}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
           {events.length > 0 ? (
             events.map((event) => (
@@ -113,14 +113,14 @@ const EventCategory: React.FC = () => {
                            hover:shadow-[8px_8px_0px_#000] 
                            flex flex-col md:flex-row min-h-[250px]"
               >
-                {/* External Notches */}
+                {}
                 <div className="absolute top-1/2 left-0 w-8 h-8 bg-[#FFF0F5] border-r-4 border-black rounded-full -translate-x-1/2 -translate-y-1/2 z-20"></div>
                 <div className="absolute top-1/2 right-0 w-8 h-8 bg-[#FFF0F5] border-l-4 border-black rounded-full translate-x-1/2 -translate-y-1/2 z-20"></div>
                 
-                {/* Content Container */}
+                {}
                 <div className="flex-1 flex flex-col md:flex-row w-full">
                     
-                    {/* Left Info Section */}
+                    {}
                     <div className="flex-1 p-6 md:p-8 flex flex-col justify-between overflow-hidden">
                          <div>
                             <span className="bg-black text-white px-3 py-1 text-xs font-bold uppercase tracking-widest mb-4 inline-block">
@@ -148,10 +148,10 @@ const EventCategory: React.FC = () => {
                          </div>
                     </div>
 
-                    {/* Divider Line */}
+                    {}
                     <div className="relative md:w-px md:my-6 md:border-l-2 border-t-2 md:border-t-0 border-dashed border-gray-300 mx-6 md:mx-0"></div>
 
-                    {/* Right Action Section */}
+                    {}
                     <div className="p-6 md:py-8 md:px-4 md:w-[240px] shrink-0 flex flex-col justify-center items-center bg-gray-50/30">
                          <a 
                            href={event.registerUrl} 
@@ -174,7 +174,7 @@ const EventCategory: React.FC = () => {
           )}
         </div>
 
-        {/* Footer Note */}
+        {}
         <div className="text-center mt-20">
           <p className="font-hand text-lg md:text-xl text-gray-500 animate-bounce">
             See you there! 🤘

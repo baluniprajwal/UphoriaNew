@@ -5,14 +5,14 @@ import { Clock, MapPin, Sparkles, Music, Zap, Star, Heart, Calendar as CalendarI
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Updated Festival Days based on new data dates
+
 const festivalDays = [
   { id: 1, label: "Day 01", date: "Feb 14", color: "bg-uphoria-pink" },
   { id: 2, label: "Day 02", date: "Feb 15", color: "bg-uphoria-cyan" },
   { id: 3, label: "Day 03", date: "Feb 16", color: "bg-uphoria-yellow" },
 ];
 
-// Provided Schedule Data
+
 const scheduleData = [
   {
     dayId: 1,
@@ -89,7 +89,7 @@ const Timeline: React.FC = () => {
   const lineRef = useRef<HTMLDivElement>(null);
   const eventsContainerRef = useRef<HTMLDivElement>(null);
 
-  // Helper to generate consistent vibrant styles for the dynamic data
+  
   const getEventStyle = (index: number) => {
     const colors = ["bg-uphoria-pink", "bg-uphoria-cyan", "bg-white", "bg-black", "bg-uphoria-yellow", "bg-uphoria-purple"];
     const rotations = ["rotate-2", "-rotate-1", "rotate-1", "-rotate-2", "rotate-3", "-rotate-3"];
@@ -104,19 +104,19 @@ const Timeline: React.FC = () => {
     };
   };
 
-  // Transform raw schedule data into UI-ready data
+  
   const activeDayData = scheduleData.find(d => d.dayId === activeDay);
   const currentEvents = activeDayData ? activeDayData.events.map((event, index) => ({
     ...event,
     ...getEventStyle(index),
-    location: "Campus Venue", // Default location as it's not in the data
-    timeBadge: `Event ${event.id}` // Using ID as badge since exact time isn't provided
+    location: "Campus Venue", 
+    timeBadge: `Event ${event.id}` 
   })) : [];
 
   useEffect(() => {
     const ctx = gsap.context(() => {
       
-      // Enhanced Background Blobs Animation
+      
       gsap.to(".timeline-bg-blob", {
         x: "random(-80, 80)",
         y: "random(-80, 80)",
@@ -129,7 +129,7 @@ const Timeline: React.FC = () => {
         stagger: 2
       });
       
-      // Rotate giant background icons
+      
       gsap.to(".bg-giant-icon", {
         rotation: 360,
         duration: 120,
@@ -137,7 +137,7 @@ const Timeline: React.FC = () => {
         ease: "linear"
       });
 
-      // Line drawing animation
+      
       gsap.fromTo(lineRef.current, 
         { height: "0%" },
         { 
@@ -153,14 +153,14 @@ const Timeline: React.FC = () => {
         }
       );
 
-      // Advanced Item Animations
+      
       const items = gsap.utils.toArray('.timeline-item') as HTMLElement[];
       items.forEach((item, index) => {
         const content = item.querySelector('.timeline-content');
         const dot = item.querySelector('.timeline-dot');
         const connector = item.querySelector('.timeline-connector');
         
-        // Even index = Right side (because of flex-row-reverse), Odd index = Left side
+        
         const isRightSide = index % 2 === 0; 
         const xOffset = isRightSide ? 100 : -100;
 
@@ -173,18 +173,18 @@ const Timeline: React.FC = () => {
           }
         });
 
-        // 1. Dot pops in
+        
         tl.fromTo(dot, 
           { scale: 0, rotation: -180 },
           { scale: 1, rotation: 0, duration: 0.6, ease: "elastic.out(1, 0.5)" }
         )
-        // 2. Connector grows
+        
         .fromTo(connector,
           { scaleX: 0, opacity: 0 },
           { scaleX: 1, opacity: 1, duration: 0.4, ease: "power2.out" },
           "-=0.4"
         )
-        // 3. Content slides and bounces in
+        
         .fromTo(content,
           { x: xOffset, opacity: 0, scale: 0.8 },
           { x: 0, opacity: 1, scale: 1, duration: 0.8, ease: "back.out(1.7)" },
@@ -200,21 +200,21 @@ const Timeline: React.FC = () => {
       ctx.revert();
       ScrollTrigger.getById("line-anim")?.kill();
     };
-  }, [activeDay, currentEvents]); // Re-run when activeDay or data changes
+  }, [activeDay, currentEvents]); 
 
   return (
     <section id="timeline" ref={containerRef} className="py-24 relative bg-[#FFF0F5] border-t-4 border-black overflow-hidden min-h-screen">
       
-      {/* 1. Dynamic Gradient Background Layer */}
+      {}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-[#FFF0F5] via-white to-[#F0F8FF] opacity-80"></div>
 
-          {/* Large Vibrant Blobs with Mixing */}
+          {}
           <div className="timeline-bg-blob absolute top-[-10%] left-[-10%] w-[60vw] h-[60vw] bg-uphoria-pink/20 rounded-full blur-[120px] mix-blend-multiply"></div>
           <div className="timeline-bg-blob absolute top-[20%] right-[-10%] w-[50vw] h-[50vw] bg-uphoria-cyan/20 rounded-full blur-[120px] mix-blend-multiply"></div>
           <div className="timeline-bg-blob absolute bottom-[-10%] left-[20%] w-[55vw] h-[55vw] bg-uphoria-yellow/20 rounded-full blur-[120px] mix-blend-multiply"></div>
           
-          {/* Pattern Overlay: Dot Grid */}
+          {}
           <div className="absolute inset-0 opacity-[0.08]" 
                style={{
                    backgroundImage: 'radial-gradient(#000 2px, transparent 2px)',
@@ -223,7 +223,7 @@ const Timeline: React.FC = () => {
           </div>
       </div>
       
-      {/* 2. Large Background Typography & Icons */}
+      {}
       <div className="absolute top-40 right-4 lg:right-10 opacity-[0.03] pointer-events-none select-none hidden md:block">
            <div className="font-display font-black text-[10rem] lg:text-[14rem] leading-none text-black rotate-90 origin-right">
               SCHEDULE
@@ -250,7 +250,7 @@ const Timeline: React.FC = () => {
             </h2>
         </div>
 
-        {/* Day Selectors */}
+        {}
         <div className="flex flex-wrap justify-center gap-4 md:gap-6 mb-20">
           {festivalDays.map((day) => (
             <button
@@ -270,7 +270,7 @@ const Timeline: React.FC = () => {
         </div>
 
         <div ref={eventsContainerRef} className="relative max-w-5xl mx-auto min-h-[500px]">
-          {/* Central Line */}
+          {}
           <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-3 bg-black/5 transform md:-translate-x-1/2 rounded-full border border-black/5"></div>
           <div ref={lineRef} className="absolute left-4 md:left-1/2 top-0 w-3 bg-black transform md:-translate-x-1/2 rounded-full z-0 origin-top h-0 shadow-[2px_0px_0px_rgba(0,0,0,0.2)]"></div>
 
@@ -278,18 +278,18 @@ const Timeline: React.FC = () => {
             {currentEvents.map((item, index) => (
               <div key={`${activeDay}-${item.id}`} className={`timeline-item flex flex-col md:flex-row items-center w-full relative z-10 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
                 
-                {/* Content Side */}
+                {}
                 <div className={`w-full md:w-1/2 pl-16 md:pl-0 ${index % 2 === 0 ? 'md:pl-12' : 'md:pr-12'} flex items-center ${index % 2 !== 0 ? 'md:justify-end' : ''}`}>
                   
-                  {/* Connector Line (Desktop only) */}
+                  {}
                   <div className={`timeline-connector hidden md:block absolute top-1/2 h-1 bg-black w-16 border-y-2 border-black ${index % 2 === 0 ? 'right-[50%] mr-4 origin-right' : 'left-[50%] ml-4 origin-left'}`}></div>
 
-                  {/* Card */}
+                  {}
                   <div className={`timeline-content w-fit max-w-full relative ${item.color} p-4 md:p-6 border-4 border-black hard-shadow ${item.rotate} group hover:rotate-0 hover:scale-105 transition-all duration-300 cursor-pointer`}>
-                     {/* Decorative Washi Tape */}
+                     {}
                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-16 h-4 bg-white/50 backdrop-blur-sm border border-black/10 rotate-2 z-10"></div>
                      
-                     {/* Badge */}
+                     {}
                      <div className="absolute -top-4 -right-2 bg-black text-white font-bold font-sans px-3 py-1 -rotate-6 group-hover:rotate-0 transition-transform border-2 border-white shadow-sm z-20 text-xs">
                         {item.timeBadge}
                      </div>
@@ -310,12 +310,12 @@ const Timeline: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Center Node */}
+                {}
                 <div className="timeline-dot absolute left-4 md:left-1/2 transform -translate-x-1/2 w-10 h-10 bg-white border-4 border-black rounded-full z-20 flex items-center justify-center shadow-[4px_4px_0px_#000]">
                     <div className={`w-4 h-4 ${item.color} border-2 border-black rounded-full`}></div>
                 </div>
 
-                {/* Empty Side */}
+                {}
                 <div className="w-full md:w-1/2 hidden md:block"></div>
               </div>
             ))}

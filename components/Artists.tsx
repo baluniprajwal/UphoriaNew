@@ -31,7 +31,7 @@ const artists = [
     color: "bg-uphoria-pink", 
     hex: "#FF007F",
     accent: "border-uphoria-pink",
-    rotate: "md:-rotate-2 md:mt-16" // Staggered layout
+    rotate: "md:-rotate-2 md:mt-16" 
   },
   { 
     id: 3, 
@@ -54,12 +54,12 @@ const Artists: React.FC = () => {
   const marqueeRef = useRef<HTMLDivElement>(null);
   const vinylRef = useRef<HTMLDivElement>(null);
   
-  // Audio & Animation State
+  
   const [isPlaying, setIsPlaying] = useState(false);
   const [activeTrack, setActiveTrack] = useState<string | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   
-  // Animation Refs
+  
   const vibeTweenRef = useRef<gsap.core.Tween | null>(null);
   const visualizerTweenRef = useRef<gsap.core.Tween | null>(null);
   const spotlightTweenRef = useRef<gsap.core.Tween | null>(null);
@@ -88,13 +88,13 @@ const Artists: React.FC = () => {
   };
 
   useEffect(() => {
-    // Initialize Audio
+    
     audioRef.current = new Audio(defaultTrack);
     audioRef.current.loop = true;
     audioRef.current.volume = 0.5;
 
     const ctx = gsap.context(() => {
-      // 1. Mouse Parallax (Standard)
+      
       const handleMouseMove = (e: MouseEvent) => {
         if (!containerRef.current) return;
         const rect = containerRef.current.getBoundingClientRect();
@@ -114,7 +114,7 @@ const Artists: React.FC = () => {
       
       window.addEventListener('mousemove', handleMouseMove);
 
-      // 2. Marquee Scroll Effect
+      
       gsap.to(marqueeRef.current, {
         xPercent: -20,
         ease: "none",
@@ -123,7 +123,7 @@ const Artists: React.FC = () => {
         yoyo: true
       });
 
-      // 3. Vinyl Spin
+      
       gsap.to(vinylRef.current, {
         rotation: 360,
         duration: 8,
@@ -131,19 +131,19 @@ const Artists: React.FC = () => {
         ease: "linear"
       });
 
-      // 4. Vibration Effect (The "Shake") - INCREASED INTENSITY
+      
       vibeTweenRef.current = gsap.to(".vibe-content", {
-        x: "random(-6, 6)", // Increased amplitude
-        y: "random(-6, 6)", // Increased amplitude
-        rotation: "random(-0.5, 0.5)", // Added slight rotation jitter
+        x: "random(-6, 6)", 
+        y: "random(-6, 6)", 
+        rotation: "random(-0.5, 0.5)", 
         scale: "random(0.99, 1.01)", 
-        duration: 0.04, // Faster shake
+        duration: 0.04, 
         repeat: -1,
         yoyo: true,
         paused: true 
       });
 
-      // 5. Sound Bars Animation - Controlled via state
+      
       visualizerTweenRef.current = gsap.to(".sound-bar-active", {
         height: () => `${gsap.utils.random(10, 100)}%`,
         backgroundColor: () => gsap.utils.random(["#FF007F", "#00F0FF", "#FFD60A"]),
@@ -159,7 +159,7 @@ const Artists: React.FC = () => {
         paused: true
       });
 
-      // 6. Spotlight Animation - Controlled via state
+      
       spotlightTweenRef.current = gsap.to(".concert-spotlight", {
         rotation: "random(-25, 25)",
         opacity: "random(0.4, 0.8)",
@@ -171,7 +171,7 @@ const Artists: React.FC = () => {
         paused: true
       });
 
-      // 7. Strobe Flash - Controlled via state
+      
       strobeTweenRef.current = gsap.to(".concert-strobe", {
         opacity: 0.15,
         duration: 0.1,
@@ -180,7 +180,7 @@ const Artists: React.FC = () => {
         paused: true
       });
       
-      // 8. Title Pulse - Controlled via state
+      
       titlePulseRef.current = gsap.to(".main-title", {
         textShadow: "0px 0px 20px rgba(255, 0, 127, 0.8), 0px 0px 40px rgba(0, 240, 255, 0.6)",
         scale: 1.05,
@@ -190,7 +190,7 @@ const Artists: React.FC = () => {
         paused: true
       });
 
-      // 9. Floating Shapes (Standard)
+      
       gsap.to(".float-shape", {
         y: "random(-30, 30)",
         rotation: "random(-20, 20)",
@@ -201,7 +201,7 @@ const Artists: React.FC = () => {
         stagger: 0.2
       });
 
-      // 10. Entrance Animations
+      
       gsap.fromTo(".artist-title-char", 
         { y: 100, opacity: 0 },
         {
@@ -248,7 +248,7 @@ const Artists: React.FC = () => {
     if(!audioRef.current) return;
 
     if (isPlaying) {
-        // Pause
+        
         audioRef.current.pause();
         
         vibeTweenRef.current?.pause();
@@ -257,7 +257,7 @@ const Artists: React.FC = () => {
         strobeTweenRef.current?.pause();
         titlePulseRef.current?.pause();
         
-        // Reset effects smoothly
+        
         gsap.to(".vibe-content", { x: 0, y: 0, rotation: 0, scale: 1, duration: 0.5 });
         gsap.to(".sound-bar-active", { height: "5%", backgroundColor: "#333", duration: 0.5 });
         gsap.to(".concert-spotlight", { opacity: 0, duration: 0.5 });
@@ -279,18 +279,18 @@ const Artists: React.FC = () => {
   return (
     <section id="artists" ref={containerRef} className="py-24 md:py-32 relative overflow-hidden bg-[#111] border-y-4 border-black min-h-screen flex flex-col justify-center perspective-1000">
         
-        {/* --- CONCERT EFFECTS --- */}
-        {/* Strobe Overlay */}
+        {}
+        {}
         <div className="concert-strobe absolute inset-0 bg-white mix-blend-overlay z-40 opacity-0 pointer-events-none"></div>
 
-        {/* Spotlights */}
+        {}
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
             <div className="concert-spotlight absolute -top-[20%] left-[20%] w-[15vw] h-[150vh] bg-gradient-to-b from-uphoria-cyan/50 to-transparent blur-2xl origin-top opacity-0 transform -rotate-12"></div>
             <div className="concert-spotlight absolute -top-[20%] right-[20%] w-[15vw] h-[150vh] bg-gradient-to-b from-uphoria-pink/50 to-transparent blur-2xl origin-top opacity-0 transform rotate-12"></div>
              <div className="concert-spotlight absolute -top-[20%] left-[50%] w-[20vw] h-[150vh] bg-gradient-to-b from-white/30 to-transparent blur-2xl origin-top opacity-0"></div>
         </div>
 
-        {/* Dynamic Grid Background */}
+        {}
         <div className="absolute inset-0 z-0 opacity-40 pointer-events-none" 
              style={{
                 backgroundImage: 'linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px)',
@@ -299,19 +299,19 @@ const Artists: React.FC = () => {
              }}>
         </div>
 
-        {/* --- Wrappers for Vibration Effect --- */}
+        {}
         <div className="vibe-content w-full h-full relative">
 
-            {/* Background Marquee Text */}
+            {}
             <div className="absolute top-10 md:top-20 left-0 w-[200%] md:w-full opacity-20 pointer-events-none select-none overflow-hidden whitespace-nowrap z-0">
                 <div ref={marqueeRef} className="font-display font-black text-[10rem] md:text-[15rem] leading-none text-transparent text-outline-white tracking-tighter">
                     FEEL THE BEAT • LOVE THE MUSIC • UPHORIA 2026 • 
                 </div>
             </div>
 
-            {/* --- Background Widgets --- */}
+            {}
 
-            {/* Widget 1: Spinning Vinyl (Bottom Right) */}
+            {}
             <div className="bg-widget absolute -bottom-20 -right-20 md:bottom-10 md:right-10 opacity-80 z-0 pointer-events-none">
                 <div ref={vinylRef} className="w-64 h-64 md:w-96 md:h-96 bg-black rounded-full border-4 border-uphoria-pink flex items-center justify-center relative shadow-2xl">
                     <div className="absolute inset-2 rounded-full border border-gray-800 opacity-50"></div>
@@ -325,7 +325,7 @@ const Artists: React.FC = () => {
                 </div>
             </div>
 
-            {/* Widget 2: Static Widget (Top Left) */}
+            {}
             <div className="bg-widget absolute top-40 left-10 md:left-20 z-0 pointer-events-none opacity-90">
                  <div className="flex items-end gap-2 h-32">
                     {[...Array(8)].map((_, i) => (
@@ -335,7 +335,7 @@ const Artists: React.FC = () => {
                  <div className="text-uphoria-cyan font-display font-bold mt-2 rotate-1 tracking-widest">AUDIO VISUALIZER</div>
             </div>
 
-            {/* Widget 3: Floating Stickers */}
+            {}
             <div className="bg-widget float-shape absolute top-1/4 right-1/4 z-0 text-uphoria-yellow opacity-80">
                  <Star size={80} fill="#FFD60A" className="drop-shadow-[4px_4px_0_rgba(0,0,0,1)]" />
             </div>
@@ -351,7 +351,7 @@ const Artists: React.FC = () => {
                 <Radio size={120} strokeWidth={1} />
             </div>
 
-            {/* --- Main Content --- */}
+            {}
             <div className="container mx-auto px-6 relative z-10">
                 <div className="flex flex-col items-center mb-16 md:mb-20 text-center">
                     <div className="inline-block bg-uphoria-yellow border-2 border-black px-4 py-1 font-hand font-bold text-lg rotate-2 mb-4 hard-shadow hover:scale-110 transition-transform">
@@ -369,7 +369,7 @@ const Artists: React.FC = () => {
                 <div className="artists-grid grid grid-cols-1 md:grid-cols-3 gap-12 max-w-7xl mx-auto items-start">
                     {artists.map((artist) => {
                         
-                        // Inline styles for dynamic glow effects when playing
+                        
                         const glowStyle = isPlaying ? {
                             boxShadow: `8px 8px 0px ${artist.hex}, 0 0 20px ${artist.hex}80`,
                             borderColor: artist.hex,
@@ -386,7 +386,7 @@ const Artists: React.FC = () => {
                         return (
                         <div key={artist.id} className={`artist-card group relative ${artist.rotate} hover:z-20 transition-all duration-500`}>
                             
-                            {/* Washi Tape - Changes from white to Neon Tape */}
+                            {}
                             <div 
                                 className={`absolute -top-4 left-1/2 -translate-x-1/2 w-24 h-6 backdrop-blur-sm border transform -rotate-1 shadow-sm z-30 transition-all duration-300`}
                                 style={{ 
@@ -396,13 +396,13 @@ const Artists: React.FC = () => {
                                 }}
                             ></div>
 
-                            {/* Card Container */}
+                            {}
                             <div 
                                 className={`relative p-3 pb-8 border-4 hard-shadow transition-all duration-300 transform group-hover:-translate-y-2 ${!isPlaying ? 'bg-white border-black group-hover:shadow-[8px_8px_0px_#FF007F]' : ''}`}
                                 style={glowStyle}
                             >
                                 
-                                {/* Image Section */}
+                                {}
                                 <div className={`relative aspect-[3/4] border-2 overflow-hidden bg-black mb-4 transition-colors duration-300 ${isPlaying ? 'border-gray-500' : 'border-black'}`}>
                                     <div className="absolute inset-0 bg-black/20 z-10 group-hover:bg-transparent transition-colors duration-300"></div>
                                     <img 
@@ -410,18 +410,18 @@ const Artists: React.FC = () => {
                                         alt={artist.name} 
                                         className={`w-full h-full object-cover transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-1 ${isPlaying ? 'grayscale-0 contrast-125 saturate-150' : 'grayscale group-hover:grayscale-0'}`}
                                     />
-                                    {/* Overlay Tag */}
+                                    {}
                                     <div className={`absolute top-0 left-0 ${artist.color} px-3 py-1 border-b-2 border-r-2 border-black font-display font-bold text-base md:text-xl z-20`}>
                                         {artist.genre}
                                     </div>
-                                    {/* Live Indicator */}
+                                    {}
                                     <div className={`absolute top-2 right-2 flex items-center gap-1 bg-black/80 px-2 py-1 rounded-full border border-white/20 z-20 transition-opacity duration-300 ${isPlaying ? 'opacity-100 shadow-[0_0_10px_red]' : 'opacity-0'}`}>
                                         <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
                                         <span className="text-[10px] text-white font-bold uppercase">Live</span>
                                     </div>
                                 </div>
 
-                                {/* Content Section */}
+                                {}
                                 <div className="px-2">
                                     <h3 
                                         className={`font-display text-3xl md:text-4xl font-black uppercase mb-1 leading-none tracking-tight group-hover:text-uphoria-purple transition-colors duration-300 ${!isPlaying ? 'text-black' : ''}`}
@@ -458,7 +458,7 @@ const Artists: React.FC = () => {
                                 </div>
                             </div>
 
-                            {/* Decorative background shape - Standard Mode Only */}
+                            {}
                             {!isPlaying && (
                                 <div className={`absolute -inset-2 ${artist.color} -z-10 border-2 border-black hidden group-hover:block transition-all duration-300`}></div>
                             )}
@@ -466,7 +466,7 @@ const Artists: React.FC = () => {
                     )})}
                 </div>
                 
-                {/* Play/Pause Controller - Moved Below Cards */}
+                {}
                 <div className="mt-24 flex flex-col items-center justify-center gap-6 relative z-50">
                     <button 
                         onClick={toggleMusic}

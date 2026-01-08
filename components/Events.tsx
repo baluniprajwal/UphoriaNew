@@ -17,28 +17,28 @@ const Events: React.FC = () => {
   const checkScroll = () => {
     if (scrollContainerRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
-      setCanScrollLeft(scrollLeft > 10); // Small buffer to avoid flickering at 0
+      setCanScrollLeft(scrollLeft > 10); 
       setCanScrollRight(Math.ceil(scrollLeft) < scrollWidth - clientWidth - 10);
     }
   };
 
   useEffect(() => {
-    // Center the scroll view initially
+    
     if (scrollContainerRef.current) {
       const scrollContainer = scrollContainerRef.current;
       const { scrollWidth, clientWidth } = scrollContainer;
       
-      // Calculate center position
+      
       const centerPos = (scrollWidth - clientWidth) / 2;
       
-      // Temporarily disable smooth scroll to make initial positioning instant
+      
       scrollContainer.style.scrollBehavior = 'auto';
       scrollContainer.scrollLeft = centerPos;
       scrollContainer.style.scrollBehavior = '';
     }
 
     const ctx = gsap.context(() => {
-      // Title Parallax
+      
       gsap.to(".section-title", {
         y: 50,
         ease: "none",
@@ -50,12 +50,12 @@ const Events: React.FC = () => {
         }
       });
 
-      // Cards Entrance
+      
       gsap.fromTo(".polaroid", 
         { y: 100, rotation: 5 },
         {
           y: 0,
-          rotation: (i) => categories[i].rotate === 'rotate-2' ? 2 : -2, // Restore natural rotation
+          rotation: (i) => categories[i].rotate === 'rotate-2' ? 2 : -2, 
           duration: 0.8,
           stagger: 0.1,
           ease: "back.out(1.2)",
@@ -66,7 +66,7 @@ const Events: React.FC = () => {
         }
       );
       
-      // Hint animation Right
+      
       gsap.to(".scroll-hint-right", {
         x: 10,
         opacity: 0.8,
@@ -76,7 +76,7 @@ const Events: React.FC = () => {
         ease: "sine.inOut"
       });
 
-      // Hint animation Left
+      
       gsap.to(".scroll-hint-left", {
         x: -10,
         opacity: 0.8,
@@ -88,7 +88,7 @@ const Events: React.FC = () => {
       
     }, containerRef);
     
-    // Initial check and event listeners
+    
     checkScroll();
     window.addEventListener('resize', checkScroll);
 
@@ -116,7 +116,7 @@ const Events: React.FC = () => {
 
   return (
     <section id="events" ref={containerRef} className="py-24 md:py-32 relative overflow-hidden bg-uphoria-yellow/10">
-       {/* Decorative Background */}
+       {}
        <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-10" 
             style={{backgroundImage: 'radial-gradient(circle, #000 1px, transparent 1px)', backgroundSize: '30px 30px'}}>
        </div>
@@ -136,7 +136,7 @@ const Events: React.FC = () => {
       </div>
 
       <div className="relative w-full">
-        {/* Horizontal Scroll Container */}
+        {}
         <div 
           ref={scrollContainerRef}
           onScroll={checkScroll}
@@ -148,7 +148,7 @@ const Events: React.FC = () => {
               onClick={() => handleCategoryClick(event.id)}
               className={`polaroid flex-shrink-0 w-[280px] md:w-[360px] snap-center group relative hover:z-50 transition-all duration-300 cursor-pointer pt-8`}
             >
-              {/* Polaroid Frame */}
+              {}
               <div className="bg-white p-4 pb-16 border-4 border-black hard-shadow transition-all duration-300 group-hover:scale-105 group-hover:-rotate-1">
                 <div className="relative aspect-[4/5] border-2 border-black overflow-hidden mb-6 bg-gray-100">
                    <img 
@@ -173,17 +173,17 @@ const Events: React.FC = () => {
                 </div>
               </div>
 
-              {/* Tape/Pin Graphic */}
+              {}
               <div className="absolute top-2 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-uphoria-pink border-4 border-black shadow-sm z-20"></div>
               <div className="absolute top-3 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-white/50 z-30"></div>
             </div>
           ))}
           
-          {/* Spacer for right padding */}
+          {}
           <div className="min-w-[20px] md:min-w-[50px] flex-shrink-0"></div>
         </div>
 
-        {/* Left Scroll Button */}
+        {}
         <button 
            onClick={handleScrollLeft}
            className={`absolute left-6 md:left-10 top-1/2 transform -translate-y-1/2 z-[60] hidden md:block focus:outline-none group/btn cursor-pointer transition-all duration-300 ${canScrollLeft ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10 pointer-events-none'}`}
@@ -194,7 +194,7 @@ const Events: React.FC = () => {
            </div>
         </button>
         
-        {/* Right Scroll Button */}
+        {}
         <button 
            onClick={handleScrollRight}
            className={`absolute right-6 md:right-10 top-1/2 transform -translate-y-1/2 z-[60] hidden md:block focus:outline-none group/btn cursor-pointer transition-all duration-300 ${canScrollRight ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10 pointer-events-none'}`}

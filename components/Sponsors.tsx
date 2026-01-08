@@ -18,7 +18,7 @@ const Sponsors: React.FC = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Marquee loop
+      
       gsap.to(marqueeRef.current, {
         xPercent: -50,
         repeat: -1,
@@ -26,7 +26,7 @@ const Sponsors: React.FC = () => {
         ease: "linear",
       });
 
-      // Background blobs animation
+      
       gsap.to(".bg-blob", {
         x: "random(-50, 50, 5)",
         y: "random(-50, 50, 5)",
@@ -52,14 +52,14 @@ const Sponsors: React.FC = () => {
       ref={containerRef}
       className="pt-24 pb-20 md:pt-32 md:pb-24 relative overflow-hidden bg-uphoria-purple text-white min-h-screen"
     >
-      {/* Dynamic Background */}
+      {}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="bg-blob absolute -top-[10%] -left-[10%] w-[50vw] h-[50vw] bg-uphoria-pink rounded-full mix-blend-screen blur-[100px] opacity-40" />
         <div className="bg-blob absolute top-[20%] -right-[10%] w-[40vw] h-[40vw] bg-uphoria-cyan rounded-full mix-blend-screen blur-[120px] opacity-40" />
         <div className="bg-blob absolute -bottom-[10%] left-[20%] w-[45vw] h-[45vw] bg-uphoria-yellow rounded-full mix-blend-screen blur-[90px] opacity-30" />
       </div>
 
-      {/* Texture Overlay */}
+      {}
       <div
         className="absolute inset-0 opacity-20"
         style={{
@@ -69,7 +69,7 @@ const Sponsors: React.FC = () => {
         }}
       />
 
-      {/* Marquee Text */}
+      {}
       <div className="absolute top-24 w-full overflow-hidden opacity-10 pointer-events-none -rotate-1">
         <div
           ref={marqueeRef}
@@ -84,7 +84,7 @@ const Sponsors: React.FC = () => {
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        {/* Heading */}
+        {}
         <div className="text-center mb-12">
           <div className="inline-block bg-white text-black border-4 border-black px-6 py-2 -rotate-2 mb-6 shadow-[4px_4px_0px_#000]">
             <h2 className="font-hand font-bold text-lg md:text-2xl">
@@ -98,7 +98,7 @@ const Sponsors: React.FC = () => {
           </h2>
         </div>
 
-        {/* CTA */}
+        {}
         <div className="text-center mb-16 relative z-20">
           <a
             href="https://drive.google.com/file/d/1IbGg8wbjrIYsWJskaky29QoopZVB23yx/view"
@@ -109,13 +109,13 @@ const Sponsors: React.FC = () => {
             <div className="absolute inset-0 bg-uphoria-cyan rounded-xl translate-x-2 translate-y-2 border-2 border-black transition-transform group-hover:translate-x-3 group-hover:translate-y-3" />
             <span className="relative bg-white text-black font-display font-black text-lg md:text-2xl px-8 md:px-10 py-3 md:py-4 rounded-xl border-4 border-black inline-flex items-center gap-3 transition-all group-hover:-translate-y-1 hover:bg-black hover:text-white hover:border-white">
               <Handshake className="text-uphoria-pink group-hover:text-uphoria-cyan" />
-              <span>BECOME A SPONSOR</span>
+              <span>CLICK TO BECOME A SPONSOR</span>
               <ArrowRight className="group-hover:translate-x-1 transition-transform" />
             </span>
           </a>
         </div>
 
-        {/* Sponsors Grid */}
+        {}
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 px-2">
             {sponsors.map((s) => (

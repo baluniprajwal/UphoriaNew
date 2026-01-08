@@ -1,4 +1,4 @@
-// Raw data provided
+
 const RAW_CATEGORIES = [
   { id: "1", name: "Music", slug: "music", description: "Music events for live gigs and acoustic nights." },
   { id: "2", name: "Art", slug: "art", description: "Art events for workshops and gallery walks." },
@@ -255,7 +255,7 @@ const EVENTS_BY_CATEGORY: any = {
   astronomy: [],
 };
 
-// Styling Constants
+
 const ROTATIONS = ["rotate-2", "-rotate-1", "rotate-1", "-rotate-2", "rotate-2", "-rotate-1", "rotate-1", "-rotate-2", "rotate-2"];
 const COLORS = [
   "bg-uphoria-cyan", 
@@ -268,17 +268,17 @@ const COLORS = [
   "bg-uphoria-purple",
   "bg-uphoria-cyan"
 ];
-// Random placeholder images for the Category Cards themselves
+
 const CATEGORY_IMAGES = [
-    "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&q=80&w=600", // Music
-    "https://images.unsplash.com/photo-1704806940833-9777a8f52c28?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Art
-    "https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&q=80&w=600", // Dance
-    "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&q=80&w=600", // Fashion
-    "https://plus.unsplash.com/premium_photo-1684923604408-940b962a701a?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Drama
-    "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=600", // Gaming
-    "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&q=80&w=600", // Literary
-    "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=600", // Photography
-    "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=600", // Astronomy
+    "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&q=80&w=600", 
+    "https://images.unsplash.com/photo-1704806940833-9777a8f52c28?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 
+    "https://images.unsplash.com/photo-1547153760-18fc86324498?auto=format&fit=crop&q=80&w=600", 
+    "https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&q=80&w=600", 
+    "https://plus.unsplash.com/premium_photo-1684923604408-940b962a701a?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 
+    "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&q=80&w=600", 
+    "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&q=80&w=600", 
+    "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=600", 
+    "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=600", 
 ];
 
 export const categories = RAW_CATEGORIES.map((c, i) => ({
