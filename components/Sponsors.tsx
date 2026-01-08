@@ -6,7 +6,7 @@ import { Handshake, ArrowRight } from "lucide-react";
 gsap.registerPlugin(ScrollTrigger);
 
 
-const sponsors = Array.from({ length: 36 }, (_, i) => ({
+const sponsors = Array.from({ length: 35 }, (_, i) => ({
   id: i + 1,
   jpg: `/sponsor/brand${i + 1}.jpg`,
   png: `/sponsor/brand${i + 1}.png`,

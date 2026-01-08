@@ -122,9 +122,9 @@ const Events: React.FC = () => {
        </div>
 
       <div className="container mx-auto px-6 mb-12 relative z-10 text-center">
-        <div className="section-title relative inline-block max-w-full">
-          <div className="absolute -inset-4 bg-black transform rotate-3 rounded-lg z-0"></div>
-          <h2 className="relative z-10 font-display text-3xl sm:text-5xl md:text-7xl lg:text-9xl font-black text-white drop-shadow-md transform -rotate-2 break-words leading-none">
+        <div className="section-title relative inline-block max-w-[92vw]">
+          <div className="absolute -inset-2 sm:-inset-4 bg-black transform rotate-3 rounded-lg z-0"></div>
+          <h2 className="relative z-10 font-display text-[clamp(2.5rem,7vw,6rem)] md:text-[clamp(3.5rem,7vw,7rem)] lg:text-[clamp(4.5rem,7vw,8rem)] font-black text-white drop-shadow-md transform -rotate-2 leading-none text-center px-2">
             EVENT CATEGORIES
           </h2>
         </div>

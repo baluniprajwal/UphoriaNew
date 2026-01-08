@@ -8,12 +8,13 @@ gsap.registerPlugin(ScrollTrigger);
 const artists = [
   { 
     id: 1, 
-    name: "Artist 01", 
+    name: "Shruti Dashmana", 
     genre: "TBA", 
     day: "Day 01",
     time: "8:00 PM",
     stage: "Main Arena",
     image: "/artist/day1artist.jpg", 
+    audio: "/artist/shruti_dashmana.mp3",
     color: "bg-uphoria-cyan", 
     hex: "#00F0FF",
     accent: "border-uphoria-cyan",
@@ -34,12 +35,13 @@ const artists = [
   },
   { 
     id: 3, 
-    name: "Artist 03", 
+    name: "Harrdy Sandhu", 
     genre: "TBA", 
     day: "Day 03",
     time: "9:00 PM",
     stage: "DJ Box",
     image: "/artist/day3artist.JPEG", 
+    audio: "/artist/harrdysandhu.mp3",
     color: "bg-uphoria-yellow", 
     hex: "#FFD60A",
     accent: "border-uphoria-yellow",
@@ -54,6 +56,7 @@ const Artists: React.FC = () => {
   
   // Audio & Animation State
   const [isPlaying, setIsPlaying] = useState(false);
+  const [activeTrack, setActiveTrack] = useState<string | null>(null);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   
   // Animation Refs
@@ -63,9 +66,30 @@ const Artists: React.FC = () => {
   const strobeTweenRef = useRef<gsap.core.Tween | null>(null);
   const titlePulseRef = useRef<gsap.core.Tween | null>(null);
 
+  const defaultTrack = "https://cdn.pixabay.com/audio/2022/01/18/audio_d0a13f69d2.mp3";
+
+  const startPlayback = (src: string) => {
+    if (!audioRef.current) return;
+    const resolvedSrc = new URL(src, window.location.href).toString();
+    if (audioRef.current.src !== resolvedSrc) {
+      audioRef.current.pause();
+      audioRef.current.src = src;
+      audioRef.current.load();
+    }
+
+    audioRef.current.play().catch(e => console.log("Audio play failed", e));
+    vibeTweenRef.current?.play();
+    visualizerTweenRef.current?.play();
+    spotlightTweenRef.current?.play();
+    strobeTweenRef.current?.play();
+    titlePulseRef.current?.play();
+    setIsPlaying(true);
+    setActiveTrack(src);
+  };
+
   useEffect(() => {
     // Initialize Audio
-    audioRef.current = new Audio("https://cdn.pixabay.com/audio/2022/01/18/audio_d0a13f69d2.mp3"); // Upbeat energetic track
+    audioRef.current = new Audio(defaultTrack);
     audioRef.current.loop = true;
     audioRef.current.volume = 0.5;
 
@@ -241,9 +265,8 @@ const Artists: React.FC = () => {
         gsap.to(".main-title", { textShadow: "none", scale: 1, duration: 0.5 });
 
     } else {
-        // Play
-        audioRef.current.play().catch(e => console.log("Audio play failed", e));
-        
+        const trackToPlay = activeTrack || defaultTrack;
+        startPlayback(trackToPlay);
         vibeTweenRef.current?.play();
         visualizerTweenRef.current?.play();
         spotlightTweenRef.current?.play();
@@ -424,8 +447,15 @@ const Artists: React.FC = () => {
 
                                 {/* Hover Action Button - Now pops with an animation */}
                                 <div className="absolute -bottom-6 right-6 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 delay-75 z-30">
-                                    <button className={`${artist.color} border-2 border-black px-6 py-2 font-display font-black text-lg flex items-center gap-2 hard-shadow hover:bg-black hover:text-white transition-all hover:scale-105 active:scale-95 text-black`}>
-                                        LISTEN <ArrowUpRight size={20} />
+                                    <button
+                                      className={`${artist.color} border-2 border-black px-6 py-2 font-display font-black text-lg flex items-center gap-2 hard-shadow hover:bg-black hover:text-white transition-all hover:scale-105 active:scale-95 text-black`}
+                                      onClick={() => {
+                                        if (artist.audio) {
+                                          startPlayback(artist.audio);
+                                        }
+                                      }}
+                                    >
+                                      LISTEN <ArrowUpRight size={20} />
                                     </button>
                                 </div>
                             </div>
