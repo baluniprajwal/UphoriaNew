@@ -444,9 +444,7 @@ const Artists: React.FC = () => {
                                         </div>
                                     </div>
                                 </div>
-
-                                {/* Hover Action Button - Now pops with an animation */}
-                                <div className="absolute -bottom-6 right-6 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 delay-75 z-30">
+                                <div className="absolute -bottom-6 right-6 opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transform translate-y-0 lg:translate-y-4 lg:group-hover:translate-y-0 transition-all duration-300 delay-75 z-30">
                                     <button
                                       className={`${artist.color} border-2 border-black px-6 py-2 font-display font-black text-lg flex items-center gap-2 hard-shadow hover:bg-black hover:text-white transition-all hover:scale-105 active:scale-95 text-black`}
                                       onClick={() => {
@@ -484,7 +482,7 @@ const Artists: React.FC = () => {
             </div>
         </div>
 
-        {/* --- DYNAMIC VISUALIZER OVERLAY (Appears when music plays) --- */}
+       
         <div className={`absolute bottom-0 left-0 w-full h-40 md:h-72 pointer-events-none flex items-end justify-center gap-[2px] md:gap-1 px-4 z-30 transition-opacity duration-500 ${isPlaying ? 'opacity-100' : 'opacity-0'}`}>
              {[...Array(40)].map((_, i) => (
                  <div 
