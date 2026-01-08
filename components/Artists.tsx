@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 const artists = [
   { 
     id: 1, 
-    name: "Shruti Dashmana", 
+    name: "Shruti Dhasmana", 
     genre: "TBA", 
     day: "Day 01",
     time: "8:00 PM",
