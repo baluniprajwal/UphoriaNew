@@ -37,12 +37,12 @@ const artists = [
   },
   {
     id: 2,
-    name: "Artist 02",
-    genre: "TBA",
+    name: "Bismil Ki Mehfil",
     day: "Day 02",
     time: "7:30 PM",
     stage: "Amphitheater",
-    image: "/revealing/revealing_soon2.png",
+    image: "/artist/bismil.png",
+    audio: "/artist/bismil_song.mp3",
     color: "bg-uphoria-pink",
     hex: "#FF007F",
     accent: "border-uphoria-pink",
@@ -477,11 +477,11 @@ const Artists: React.FC = () => {
                         }`}
                       />
                       {}
-                      {artist.genre && (
+                      { (
                         <div
-                          className={`absolute top-0 left-0 ${artist.color} px-3 py-1 border-b-2 border-r-2 border-black font-display font-bold text-base md:text-xl z-20`}
+                          className={`absolute top-0 left-0 px-3 py-1  border-black font-display font-bold text-base md:text-xl z-20`}
                         >
-                          {artist.genre}
+                          
                         </div>
                       )}
                       {}
