@@ -54,7 +54,7 @@ const artists = [
     day: "Day 03",
     time: "9:00 PM",
     stage: "DJ Box",
-    image: "/artist/day3artist.JPEG",
+    image: "/artist/day3artist.jpg",
     audio: "/artist/harrdysandhu.mp3",
     color: "bg-uphoria-yellow",
     hex: "#FFD60A",
