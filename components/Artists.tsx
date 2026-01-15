@@ -41,7 +41,7 @@ const artists = [
     day: "Day 02",
     time: "7:30 PM",
     stage: "Amphitheater",
-    image: "/artist/bismil.png",
+    image: "/artist/bismil.jpg",
     audio: "/artist/bismil_song.mp3",
     color: "bg-uphoria-pink",
     hex: "#FF007F",
