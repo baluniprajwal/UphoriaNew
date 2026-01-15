@@ -123,10 +123,6 @@ const EventCategory: React.FC = () => {
                     {}
                     <div className="flex-1 p-6 md:p-8 flex flex-col justify-between overflow-hidden">
                          <div>
-                            <span className="bg-black text-white px-3 py-1 text-xs font-bold uppercase tracking-widest mb-4 inline-block">
-                                {event.date}
-                            </span>
-                            
                             <h3 className="font-display text-2xl md:text-3xl lg:text-4xl font-black uppercase mb-3 leading-tight break-words hyphens-auto">
                                 {event.title}
                             </h3>
