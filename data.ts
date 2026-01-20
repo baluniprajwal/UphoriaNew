@@ -301,7 +301,7 @@ export const getEventsForCategory = (categoryId: number) => {
     id: event.id,
     title: event.title,
     description: `Join us for ${event.title}! Experience the vibes at Uphoria 2026.`,
-    time: "TBA",
+    time: event.date,
     venue: "Bennett Univ.",
     price: "Register",
     date: event.date,
