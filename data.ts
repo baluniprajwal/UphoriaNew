@@ -109,7 +109,7 @@ const EVENTS_BY_CATEGORY: any = {
     {
       id: "dance-groove-wars",
       title: "Groove Wars",
-      date: "Feb 15, 2026",
+      date: "Feb 16, 2026",
       venue: "C5 Stage",
       image: "https://images.unsplash.com/photo-1545959588-316158b53272?auto=format&fit=crop&q=80&w=600",
       registerUrl: "https://unstop.com/p/groove-wars-dance-competition-uphoria-2026-bennett-university-bu-greater-noida-1607276",
@@ -185,7 +185,7 @@ const EVENTS_BY_CATEGORY: any = {
     {
       id: "drama-rangmanch",
       title: "Rangmanch",
-      date: "Feb 15, 2026",
+      date: "Feb 16, 2026",
       venue: "102-PLH",
       image: "https://images.unsplash.com/photo-1503095392269-2d609236f675?auto=format&fit=crop&q=80&w=600",
       registerUrl: "https://unstop.com/p/rangmanch-stage-play-uphoria-2026-bennett-university-bu-greater-noida-1607169",
