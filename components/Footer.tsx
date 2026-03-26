@@ -26,7 +26,6 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
           
-          {}
           <div className="lg:col-span-6 flex flex-col items-start">
             <div className="flex items-center gap-4 text-uphoria-pink mb-6 font-display font-bold tracking-widest text-sm">
                <span className="w-12 h-[2px] bg-uphoria-pink"></span> EST. 2026
@@ -136,7 +135,7 @@ const Footer: React.FC = () => {
               loading="lazy"
             />
           </div>
-          <div className="w-full md:w-auto flex items-center justify-center md:justify-end pl-0 md:pl-3">
+          {/*<div className="w-full md:w-auto flex items-center justify-center md:justify-end pl-0 md:pl-3">
             {techTeam.map((member, i) => (
               <a
                 key={i}
@@ -165,7 +164,7 @@ const Footer: React.FC = () => {
                 </div>
               </a>
             ))}
-          </div>
+          </div>*/}
         </div>
 
         {/* Bottom Bar */}
@@ -176,9 +175,9 @@ const Footer: React.FC = () => {
              <span>ALL RIGHTS RESERVED</span>
           </div>
           
-          <div className="flex items-center gap-1 text-sm md:text-base order-1 md:order-none mb-2 md:mb-0">
+          {/*<div className="flex items-center gap-1 text-sm md:text-base order-1 md:order-none mb-2 md:mb-0">
              DEVELOPED BY <a href="https://www.instagram.com/builditservices" target="_blank" rel="noreferrer" className="text-uphoria-pink flex items-center gap-1 hover:text-white transition-colors">BUILDIT <ArrowUpRight size={14} /></a>
-          </div>
+          </div>*/}
         </div>
       </div>
     </footer>
